@@ -1,0 +1,30 @@
+# Load data
+data <- read_csv("data/admissions_data.csv")
+
+# Convert variables
+data$Programming_Experience <- factor(data$Programming_Experience,
+                                      levels = c("None", "Basic", "Intermediate", "Advanced"))
+data$Admission_Outcome <- factor(data$Admission_Outcome)
+
+# Create dummy variables
+data_dummies <- dummyVars(" ~ .", data = data, fullRank = TRUE)
+data_ready <- as.data.frame(predict(data_dummies, newdata = data))
+
+# Split data
+set.seed(123)
+trainIndex <- createDataPartition(data_ready$Admission_Outcome, p = .8, list = FALSE)
+trainData <- data_ready[trainIndex, ]
+testData  <- data_ready[-trainIndex, ]
+
+# Fit logistic regression model
+model <- glm(Admission_Outcome ~ ., data = trainData, family = binomial)
+
+# Summary
+summary(model)
+
+# Predict
+pred_probs <- predict(model, testData, type = "response")
+pred_class <- ifelse(pred_probs > 0.5, 1, 0)
+
+# Confusion Matrix
+confusionMatrix(as.factor(pred_class), as.factor(testData$Admission_Outcome))

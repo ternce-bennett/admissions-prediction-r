@@ -1,0 +1,26 @@
+# Load packages
+library(tidyverse)
+
+# Load dataset
+data <- read_csv("data/admissions_data.csv")
+
+# View structure
+glimpse(data)
+
+# Convert categorical variables
+data$Programming_Experience <- factor(data$Programming_Experience,
+                                      levels = c("None", "Basic", "Intermediate", "Advanced"))
+data$Admission_Outcome <- as.factor(data$Admission_Outcome)
+
+# Summary statistics
+summary(data)
+
+# GPA vs Admission boxplot
+ggplot(data, aes(x = Admission_Outcome, y = GPA, fill = Admission_Outcome)) +
+  geom_boxplot() +
+  labs(title = "GPA vs Admission Outcome")
+
+# Programming Experience bar chart
+ggplot(data, aes(x = Programming_Experience, fill = Admission_Outcome)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Admission by Programming Experience")
