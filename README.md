@@ -1,4 +1,5 @@
-Graduate Admissions Prediction using Logistic Regression (R)
+🎓 Graduate Admissions Prediction using Logistic Regression (R)
+
 This project analyzes applicant data to predict the likelihood of graduate school admission using logistic regression. It explores how academic performance, GRE scores, work experience, research exposure, and programming skills influence admissions outcomes.
 
 📊 Project Overview
