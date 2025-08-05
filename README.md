@@ -63,6 +63,7 @@ r
 Copy
 Edit
 install.packages(c("tidyverse", "caret", "ggplot2", "readr"))
+
 💡 Motivation
 This project demonstrates how data science can support real-world decision-making, such as optimizing graduate admissions. It also showcases the use of R for classification tasks, a useful skill in academic and research environments.
 
