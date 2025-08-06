@@ -1,70 +1,71 @@
-🎓 Graduate Admissions Prediction using Logistic Regression (R)
+# Graduate Admissions Prediction using Logistic Regression (R)
 
 This project analyzes applicant data to predict the likelihood of graduate school admission using logistic regression. It explores how academic performance, GRE scores, work experience, research exposure, and programming skills influence admissions outcomes.
 
-📊 Project Overview
-The goal is to help university admissions teams make data-informed decisions by modeling patterns in past admissions data. Using R, we perform exploratory data analysis (EDA), preprocess the data, and build a logistic regression model to predict admission outcomes (admitted vs. not admitted).
+---
 
-🧠 Key Features
-Exploratory Data Analysis: Visualizations for GPA distribution, GRE scores, and programming experience vs. admission.
+## 🚀 Project Overview
 
-Data Preprocessing: Factor conversion, dummy variable creation for categorical data, and data partitioning for training/testing.
+The goal is to help university admissions teams make data-informed decisions by modeling patterns in past admissions data. Using **R**, the project performs exploratory data analysis (EDA), data preprocessing, and builds a logistic regression model to predict admission outcomes (admitted vs. not admitted).
 
-Logistic Regression Model: Predicts the binary outcome of admission using all relevant features.
+---
 
-Model Evaluation: Includes confusion matrix to assess model accuracy.
+## 🧠 Key Features
 
-📁 Dataset
-The dataset contains 10 observations with the following fields:
+- **Exploratory Data Analysis (EDA):** Visualizations of GPA distribution, GRE scores, and programming experience vs. admission outcome  
+- **Data Preprocessing:** Factor conversions, dummy variable creation for categorical features, and train-test data partitioning  
+- **Logistic Regression Model:** Predicts binary admission outcomes using relevant applicant features  
+- **Model Evaluation:** Confusion matrix to assess accuracy and model performance  
 
-GPA: Undergraduate GPA
+---
 
-GRE_Score: GRE exam score
+## 📁 Dataset Description
 
-Work_Experience_Years: Years of professional experience
+The dataset includes 10 observations with the following fields:
 
-Research_Experience: Binary indicator for research involvement
+| Variable               | Description                            |
+|------------------------|------------------------------------|
+| GPA                    | Undergraduate Grade Point Average   |
+| GRE_Score              | GRE exam score                      |
+| Work_Experience_Years  | Years of professional experience    |
+| Research_Experience    | Binary indicator for research (0/1) |
+| Programming_Experience | Categorical: None, Basic, Intermediate, Advanced |
+| Admission_Outcome      | Target variable (1 = Admitted, 0 = Not Admitted) |
 
-Programming_Experience: Categorical — None, Basic, Intermediate, Advanced
+*Note: This small dataset is illustrative; larger datasets improve model robustness.*
 
-Admission_Outcome: Binary target variable (1 = Admitted, 0 = Not Admitted)
+---
 
-(A larger dataset would yield more robust results — this example is illustrative.)
+## 🧪 Technologies Used
 
-🧪 Technologies Used
-R: Data manipulation, modeling, and visualization
+- **R** for data manipulation, modeling, and visualization  
+- Key libraries: `tidyverse`, `caret`, `ggplot2`, `readr`  
 
-Libraries: tidyverse, caret, ggplot2
+---
 
-📈 Results Summary
-The model correctly classifies most applicants in the test set with reasonable accuracy.
+## 📈 Results Summary
 
-Variables like GPA, GRE Score, and Programming Experience showed influence on admission outcomes.
+- The model correctly classifies most applicants in the test set with reasonable accuracy  
+- Variables such as GPA, GRE Score, and Programming Experience strongly influence admission chances  
+- Visualizations indicate higher GPA and programming skills correlate with higher admission likelihood  
 
-Visual analysis suggests higher GPA and programming proficiency correlate with admission.
+---
 
-✅ Next Steps / Improvements
-Collect or use a larger dataset for better model generalization.
+## ✅ Next Steps & Improvements
 
-Try other models (e.g., decision trees, random forest) for performance comparison.
+- Use larger datasets for better model generalization  
+- Experiment with other classification models (decision trees, random forests)  
+- Apply cross-validation and hyperparameter tuning  
+- Incorporate probability thresholds for more nuanced admission decisions  
 
-Perform cross-validation and hyperparameter tuning.
+---
 
-Add probability thresholds for more nuanced decision-making.
+## ▶️ How to Run
 
-▶️ How to Run
-Open eda.R to explore the data visually.
-
-Run model_regression.R to build and evaluate the logistic regression model.
+1. Open and run `eda.R` to perform exploratory data analysis and visualize the dataset  
+2. Run `model_regression.R` to build and evaluate the logistic regression model  
 
 Ensure required libraries are installed:
 
-r
-Copy
-Edit
+```r
 install.packages(c("tidyverse", "caret", "ggplot2", "readr"))
-
-💡 Motivation
-This project demonstrates how data science can support real-world decision-making, such as optimizing graduate admissions. It also showcases the use of R for classification tasks, a useful skill in academic and research environments.
-
-
